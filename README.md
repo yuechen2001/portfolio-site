@@ -13,7 +13,7 @@ This site is a reflection of my journey as a software engineer, game developer, 
   A quick intro to who I am, what I’m into, and what keeps me building.
 
 - **Skills & Experience**  
-  A rundown of the tools, frameworks, and technologies I use professionally and for fun.
+  A rundown of my experiences, as well as the tools, frameworks, and technologies I use professionally and for fun.
 
 - **Contact**  
   Reach out directly via a contact modal powered by EmailJS - no backend needed.
