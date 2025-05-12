@@ -31,7 +31,7 @@
 }
 
 .logo {
-    font-size: 28px;
+    font-size: clamp(12px, 2vw, 18px);
     font-weight: 700;
     color: white;
     text-decoration: none;
@@ -97,6 +97,10 @@
 
 /* Responsive navigation styles */
 @media (max-width: 768px) {
+    #navbar-container {
+        display: none !important;
+    }
+    
     .hamburger {
         display: block;
     }

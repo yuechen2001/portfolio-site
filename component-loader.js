@@ -1,7 +1,6 @@
 // Component loader for HTML fragments
 document.addEventListener('DOMContentLoaded', function() {
     const components = [
-        { id: 'head-container', path: 'components/html/head.html' },
         { id: 'navbar-container', path: 'components/html/navbar.html' },
         { id: 'hero-container', path: 'components/html/hero.html' },
         { id: 'about-container', path: 'components/html/about.html' },
@@ -9,8 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
         { id: 'skills-container', path: 'components/html/skills.html' },
         { id: 'projects-container', path: 'components/html/projects.html' },
         { id: 'footer-container', path: 'components/html/footer.html' },
-        { id: 'contact-modal-container', path: 'components/html/contact-modal.html' },
-        { id: 'scripts-container', path: 'components/html/scripts.html' }
+        { id: 'contact-modal-container', path: 'components/html/contact-modal.html' }
     ];
 
     // Keep track of loaded components
@@ -19,23 +17,15 @@ document.addEventListener('DOMContentLoaded', function() {
     // Function to initialize dynamic elements once all components are loaded
     function initializeDynamicElements() {
         // ---- Contact Modal Logic ----
-        console.log('[component-loader.js] Running contact modal logic');
         const modal = document.getElementById('contactModal');
         const contactBtn = document.getElementById('contactMeBtn');
         const closeBtn = document.getElementById('closeContactModal');
         const sendButton = document.getElementById('sendModalEmailBtn');
         const form = document.getElementById('contactFormModal');
 
-        console.log('[component-loader.js] modal:', modal);
-        console.log('[component-loader.js] contactBtn:', contactBtn);
-        console.log('[component-loader.js] closeBtn:', closeBtn);
-        console.log('[component-loader.js] sendButton:', sendButton);
-        console.log('[component-loader.js] form:', form);
-
         // Open modal
         if (contactBtn) {
             contactBtn.addEventListener('click', function() {
-                console.log('[component-loader.js] contactMeBtn clicked!');
                 modal.style.display = 'flex';
                 document.body.style.overflow = 'hidden';
             });
@@ -54,18 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.body.style.overflow = '';
             }
         });
-        // Load EmailJS
-        function loadEmailJS(callback) {
-            if (window.emailjs) {
-                callback();
-            } else {
-                const script = document.createElement('script');
-                script.src = 'https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js';
-                script.onload = callback;
-                document.head.appendChild(script);
-            }
-        }
-        loadEmailJS(function() {
+        if (window.emailjs) {
             // Initialize EmailJS
             window.emailjs.init('rC6wk_uD_eRTjpJ4r');
             // Setup send button
@@ -99,61 +78,41 @@ document.addEventListener('DOMContentLoaded', function() {
                         });
                 });
             }
-        });
+        }; 
         // ---- End Contact Modal Logic ----
 
-        // Initialize particles.js
-        if (typeof particlesJS !== 'undefined') {
+        function loadParticlesJS(callback) {
+            if (typeof particlesJS !== 'undefined') {
+                callback();
+            } else {
+                const script = document.createElement('script');
+                script.src = 'https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js';
+                script.onload = callback;
+                document.head.appendChild(script);
+            }
+        }
+        const particlesContainer = document.getElementById('particles-js');
+        if (particlesContainer) {
             particlesJS('particles-js', {
                 "particles": {
-                    "number": {
-                        "value": 80,
-                        "density": {
-                            "enable": true,
-                            "value_area": 800
-                        }
-                    },
-                    "color": {
-                        "value": "#ffffff"
-                    },
-                    "shape": {
-                        "type": "circle",
-                        "stroke": {
-                            "width": 0,
-                            "color": "#000000"
-                        }
-                    },
-                    "opacity": {
-                        "value": 0.5,
-                        "random": false
-                    },
-                    "size": {
-                        "value": 3,
-                        "random": true
-                    },
-                    "line_linked": {
-                        "enable": true,
-                        "distance": 150,
-                        "color": "#ffffff",
-                        "opacity": 0.4,
-                        "width": 1
-                    },
-                    "move": {
-                        "enable": true,
-                        "speed": 3
-                    }
+                    "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+                    "color": { "value": "#ffffff" },
+                    "shape": { "type": "circle" },
+                    "opacity": { "value": 0.5, "random": false },
+                    "size": { "value": 3, "random": true },
+                    "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 },
+                    "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
                 },
                 "interactivity": {
                     "detect_on": "canvas",
                     "events": {
-                        "onhover": {
-                            "enable": true,
-                            "mode": "grab"
-                        },
-                        "onclick": {
-                            "enable": true,
-                            "mode": "push"
-                        }
+                        "onhover": { "enable": true, "mode": "repulse" },
+                        "onclick": { "enable": true, "mode": "push" },
+                        "resize": true
+                    },
+                    "modes": {
+                        "repulse": { "distance": 100, "duration": 0.4 },
+                        "push": { "particles_nb": 4 }
                     }
                 },
                 "retina_detect": true
@@ -319,7 +278,16 @@ document.addEventListener('DOMContentLoaded', function() {
         window.addEventListener('scroll', updateActiveLink);
         updateActiveLink(); // Initialize on load
     }
-    
+
+    function hideScrollIndicatorAfterDelay() {
+        const scrollIndicator = document.getElementById('scroll-indicator');
+        if (scrollIndicator) {
+            setTimeout(() => {
+                scrollIndicator.style.display = 'none';
+            }, 3000);
+        }
+    }
+
     // Initialize scroll animations
     function initializeScrollAnimations() {
         if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
@@ -425,6 +393,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+
+
     // Load each component into its container
     components.forEach(component => {
         fetch(component.path)
@@ -462,7 +432,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     // Initialize dynamic elements when all components are loaded
                     if (loadedComponents === components.length) {
                         // Add a short delay to ensure DOM is fully updated
-                        setTimeout(initializeDynamicElements, 200);
+                        setTimeout(() => {
+                            initializeDynamicElements();
+                            hideScrollIndicatorAfterDelay();
+                        }, 200);
                     }
                 } else {
                     console.error(`Container not found for ${component.path}`);

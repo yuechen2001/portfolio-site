@@ -6,7 +6,7 @@
 .btn {
     display: inline-block;
     padding: 12px 28px;
-    font-size: 16px;
+    font-size: clamp(12px, 2vw, 16px);
     font-weight: 500;
     border-radius: 6px !important;
     text-decoration: none;
@@ -61,7 +61,7 @@
 }
 
 .section-header h2 {
-    font-size: 36px;
+    font-size: clamp(20px, 5vw, 36px);
     position: relative;
     display: inline-block;
 }
@@ -97,7 +97,7 @@
     background-color: rgba(255, 255, 255, 0.15);
     border-radius: 50%;
     color: white;
-    font-size: 18px;
+    font-size: clamp(12px, 2vw, 18px);
     transition: all var(--transition-speed) ease;
     backdrop-filter: blur(5px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -128,7 +128,7 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    font-size: 20px;
+    font-size: clamp(14px, 2.5vw, 20px);
     box-shadow: var(--box-shadow);
     transition: all var(--transition-speed) ease;
     opacity: 1; /* Always visible for now to debug */

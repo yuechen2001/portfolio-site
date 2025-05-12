@@ -10,7 +10,7 @@
 
 .skills-category h3 {
     margin-bottom: 30px;
-    font-size: 24px;
+    font-size: clamp(16px, 3vw, 24px);
     color: var(--primary-color);
     position: relative;
     display: inline-block;
@@ -71,13 +71,13 @@
 }
 
 .skill-logo {
-    font-size: 20px;
+    font-size: clamp(12px, 2.5vw, 20px);
     color: var(--primary-color);
     flex-shrink: 0;
 }
 
 .skill-item h4 {
-    font-size: 17px;
+    font-size: clamp(12px, 2vw, 17px);
     font-weight: 500;
     margin: 0;
     text-align: left;
