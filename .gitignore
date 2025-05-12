@@ -1,0 +1,38 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log
+yarn.lock
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Build output
+dist/
+build/
+
+# Environment files
+.env
+.env.*
+
+# VSCode settings
+.vscode/
+
+# Mac system files
+._*
+
+# Logs
+*.log
+
+# Personal/Private files
+*.local
+*.secret
+
+# Ignore IDE project files
+.idea/
+*.iml
+
+# Ignore any backup files
+*~

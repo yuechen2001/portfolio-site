@@ -1,0 +1,75 @@
+<!-- Load main scripts with type="module" for ES6 imports -->
+<script type="module" src="js/main.js"></script>
+
+<!-- Initialize particles and rotating text directly -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Back to top functionality
+        const backToTopButton = document.getElementById('backToTop');
+        if (backToTopButton) {
+            backToTopButton.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+        
+        // Make sure particles.js and other scripts are initialized
+        if (typeof particlesJS !== 'undefined') {
+            particlesJS('particles-js', {
+                "particles": {
+                    "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+                    "color": { "value": "#ffffff" },
+                    "shape": { "type": "circle" },
+                    "opacity": { "value": 0.5, "random": false },
+                    "size": { "value": 3, "random": true },
+                    "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 },
+                    "move": { "enable": true, "speed": 3 }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } }
+                },
+                "retina_detect": true
+            });
+        }
+        
+        // Initialize rotating text
+        const rotatingElement = document.getElementById('rotating-text');
+        if (rotatingElement) {
+            const roles = ['Software Engineer', 'Photographer', 'Casual Guitarist'];
+            let currentRoleIndex = 0;
+            let currentCharIndex = 0;
+            let isDeleting = false;
+            let typingSpeed = 100;
+            
+            function typeEffect() {
+                const currentRole = roles[currentRoleIndex];
+                
+                if (isDeleting) {
+                    rotatingElement.textContent = currentRole.substring(0, currentCharIndex - 1);
+                    currentCharIndex--;
+                    typingSpeed = 50;
+                } else {
+                    rotatingElement.textContent = currentRole.substring(0, currentCharIndex + 1);
+                    currentCharIndex++;
+                    typingSpeed = 100;
+                }
+                
+                if (!isDeleting && currentCharIndex === currentRole.length) {
+                    isDeleting = true;
+                    typingSpeed = 1500;
+                } else if (isDeleting && currentCharIndex === 0) {
+                    isDeleting = false;
+                    currentRoleIndex = (currentRoleIndex + 1) % roles.length;
+                    typingSpeed = 500;
+                }
+                
+                setTimeout(typeEffect, typingSpeed);
+            }
+            
+            setTimeout(typeEffect, 1000);
+        }
+    });
+</script>

@@ -1,0 +1,270 @@
+/**
+ * About and Experience section styles
+ * Contains styles for the about me and work experience sections
+ */
+
+/* About Section */
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: stretch;
+}
+
+.about-image {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.image-container {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+
+.image-container img.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.image-container:hover img {
+    transform: scale(1.05);
+}
+
+.image-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom right, rgba(37, 99, 235, 0.2), rgba(16, 185, 129, 0.2));
+    z-index: 2;
+}
+
+.about-count {
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    width: 80px;
+    height: 80px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.image-container .placeholder-image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(135deg, #f8fafc 25%, #e2e8f0 25%, #e2e8f0 50%, #f8fafc 50%, #f8fafc 75%, #e2e8f0 75%, #e2e8f0 100%);
+    background-size: 20px 20px;
+    font-size: 100px;
+    color: var(--primary-color);
+    opacity: 0.8;
+}
+
+.about-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 20px 0;
+}
+
+.about-text h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.personal-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.info-item {
+    display: flex;
+    gap: 10px;
+}
+
+.info-title {
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+.info-value {
+    color: var(--gray-color);
+}
+
+
+.info-item {
+    display: flex;
+    gap: 10px;
+}
+
+.info-title {
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+/* Experience section - Timeline */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+/* Center line */
+.timeline::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+    border-radius: 2px;
+}
+
+/* Container for content */
+.timeline-item {
+    padding: 15px 30px;
+    position: relative;
+    width: 50%;
+    margin-bottom: 40px;
+}
+
+/* Place the container to the left */
+.timeline-item:nth-child(odd) {
+    left: 0;
+    padding-right: 40px;
+}
+
+/* Place the container to the right */
+.timeline-item:nth-child(even) {
+    left: 50%;
+    padding-left: 40px;
+}
+
+/* Add dots to the timeline */
+.timeline-dot {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -10px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border: 4px solid white;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Adjust dots for right side */
+.timeline-item:nth-child(even) .timeline-dot {
+    left: -10px;
+}
+
+.timeline-content {
+    padding: 20px;
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-date {
+    font-size: 14px;
+    color: var(--gray-color);
+    margin-bottom: 6px;
+    margin-top: 0;
+}
+
+.timeline-content h3 {
+    font-size: 20px;
+    margin-bottom: 6px;
+    margin-top: 0;
+}
+
+.timeline-content h4 {
+    font-size: 17px;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.experience-details {
+    padding-left: 20px;
+}
+
+.experience-details li {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.experience-details li::before {
+    content: "•";
+    color: var(--primary-color);
+    font-weight: bold;
+    position: absolute;
+    left: -15px;
+}
+
+/* Responsive timeline */
+@media (max-width: 1200px) {
+    .timeline-item:nth-child(odd) .timeline-date {
+        right: -140px;
+    }
+
+    .timeline-item:nth-child(even) .timeline-date {
+        left: -140px;
+    }
+}
+
+@media (max-width: 992px) {
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    .about-image {
+        margin-bottom: 20px;
+    }
+    .image-container.clean-profile {
+        margin: 0 auto 10px auto;
+    }
+}
+
+
+@media (max-width: 576px) {
+    .personal-info {
+        grid-template-columns: 1fr;
+    }
+}

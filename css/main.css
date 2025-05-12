@@ -1,0 +1,82 @@
+/**
+ * Main CSS file
+ * Imports all component CSS files for a modular and maintainable structure
+ */
+
+/* Base and utilities */
+@import 'components/base.css';
+@import 'components/buttons.css';
+
+/* Layout components */
+@import 'components/navigation.css';
+@import 'components/hero.css';
+@import 'components/about-experience.css';
+@import 'components/skills.css';
+@import 'components/projects.css';
+@import 'components/contact.css';
+
+/* Animation classes */
+.animate-text {
+    /* No animation for the main name, it should always be visible */
+    opacity: 1;
+}
+
+.animate-text-delay {
+    animation: fadeInUp 1s ease 0.2s forwards;
+    opacity: 0;
+}
+
+.animate-text-delay-2 {
+    animation: fadeInUp 1s ease 0.4s forwards;
+    opacity: 0;
+}
+
+.animate-text-delay-3 {
+    animation: fadeInUp 1s ease 0.6s forwards;
+    opacity: 0;
+}
+
+.animate-text-delay-4 {
+    animation: fadeInUp 1s ease 0.8s forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Loading spinner */
+.spinner-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: var(--primary-color);
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
