@@ -30,9 +30,6 @@ This site is a reflection of my journey as a software engineer, game developer, 
 - **JavaScript (ES Modules)**  
   All interactive features are organized in separate ES modules under `/js/modules/`, making the codebase more maintainable and scalable. Each feature (animations, navigation, UI effects, contact form) lives in its own module.
 
-- **Assets**  
-  Images, icons, and other static files live under `/assets/`.
-
 ## 🔧 Tech Stack
 
 - **HTML5 + CSS3 (Modular, Responsive)**  
