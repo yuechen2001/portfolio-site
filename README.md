@@ -1,38 +1,47 @@
-# Zhu Yuechen's Portfolio Site 🚀
+# Zhu Yuechen's Portfolio 🌐
 
-Welcome to my personal portfolio website!  
-This site is a showcase of my journey as a software engineer, game developer, and creative technologist. Here, you'll find a curated selection of my projects, technical skills, and a bit about who I am.
+Welcome to my personal website - a space where I document and share what I've built, what I’ve learned, and what I’m excited about in tech.
 
-## 🌟 What You'll Find
+This site reflects my journey as a software engineer, game developer, and someone who just really enjoys making things that work (and look good doing it).
 
-- **Featured Projects:**  
-  Explore a diverse range of my work, from blockchain-powered platforms and Unity 3D game collections to AI-driven tools and mobile apps. Each project card includes a brief description, technologies used, and direct links to code or live demos.
+---
 
-- **About Me:**  
-  Get to know my background, experiences, and what drives my passion for technology and innovation.
+## 🧩 What’s Inside
 
-- **Skills & Experience:**  
-  A snapshot of my technical stack, frameworks, and the tools I use to bring ideas to life.
+- **Projects**  
+  A collection of things I’ve worked on - from Unity games and blockchain tools to AI side projects and mobile apps. Each one includes a short write-up, the tech stack, and links to code or live versions where possible.
 
-- **Contact Modal:**  
-  Want to connect? Just hit the "Contact Me" button—my site features a sleek modal popup for easy communication, powered by EmailJS.
+- **About Me**  
+  A quick overview of my background, interests, and what drives me to keep building.
 
-## 🛠️ How I Built This Site
+- **Skills & Experience**  
+  A breakdown of the tools, frameworks, and technologies I use regularly.
 
-- **HTML5 & CSS3:**  
-  Responsive, modern, and clean design principles for a seamless user experience across devices.
+- **Contact**  
+  There’s a simple contact modal powered by EmailJS - feel free to drop me a message directly from the site.
 
-- **Modular JavaScript:**  
-  All interactive features (animations, modal popups, dynamic content loading) are organized into modular JS files for maintainability and scalability.
+---
 
-- **Component-Based Architecture:**  
-  Each section (navbar, hero, about, projects, etc.) is loaded dynamically as an HTML component, ensuring a DRY and organized codebase.
+## 🔧 Tech Stack
 
-- **Animations & Effects:**  
-  Leveraged GSAP, particles.js, and VanillaTilt for engaging, smooth animations and UI effects.
+- **HTML5 + CSS3**  
+  Designed to be responsive and lightweight across devices.
 
-- **Contact Integration:**  
-  The contact modal uses EmailJS for secure, spam-free messaging—no backend required!
+- **Vanilla JavaScript (modular)**  
+  All functionality is cleanly organized into modular files for easy maintenance.
 
-- **Deployed as a Static Site:**  
-  The site is optimized for static hosting platforms like GitHub Pages, Vercel, or Netlify.
+- **Component-Based Layout**  
+  Each section (e.g., navbar, projects, contact) is dynamically loaded for better structure and reusability.
+
+- **Animations**  
+  GSAP, particles.js, and VanillaTilt add subtle, interactive effects without overwhelming the page.
+
+- **EmailJS Integration**  
+  The contact form works without a backend, thanks to EmailJS.
+
+- **Static Deployment**  
+  The site is fully static — ready for platforms like GitHub Pages, Netlify, or Vercel.
+
+---
+
+Thanks for visiting — hope you enjoy browsing as much as I enjoyed building it.
