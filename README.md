@@ -39,7 +39,7 @@ This site is a reflection of my journey as a software engineer, game developer, 
   Built for all devices, with a focus on clean, maintainable code.
 
 - **Vanilla JavaScript (ES Modules)**  
-  No frameworks needed — just modern JS organized as ES modules for better maintainability and code separation. Each feature (animations, navigation, UI effects, contact form) lives in its own module.
+  No frameworks needed - just modern JS organized as ES modules for better maintainability and code separation. Each feature (animations, navigation, UI effects, contact form) lives in its own module.
 
 - **GSAP, particles.js, VanillaTilt**  
   For smooth animations and interactive backgrounds.
