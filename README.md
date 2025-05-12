@@ -59,7 +59,3 @@ This site is a reflection of my journey as a software engineer, game developer, 
 ## 📬 Contact
 
 Feel free to reach out via the contact form - I’m always up for a chat about cool projects, collaborations, or just geeking out about tech!
-
----
-
-Thanks for visiting - hope you enjoy browsing as much as I enjoyed building it.
