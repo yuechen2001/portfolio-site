@@ -13,7 +13,7 @@ This site is a reflection of my journey as a software engineer, game developer, 
   A quick intro to who I am, what I’m into, and what keeps me building.
 
 - **Skills & Experience**  
-  A rundown of my experiences, as well as the tools, frameworks, and technologies I use professionally and for fun.
+  A rundown of my experiences, as well as the tools, frameworks, and technologies I use professionally and for fun. Skills are organised into: Programming Languages, Frontend & Mobile, Backend & Infrastructure, Web3 & Blockchain, AI & ML, Testing & Dev Tools, and Databases & Storage.
 
 - **Contact**  
   Reach out directly via a contact modal powered by EmailJS - no backend needed.
